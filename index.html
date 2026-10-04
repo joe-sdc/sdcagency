@@ -14,24 +14,27 @@
   --accent:#0E6B73; --accent-ink:#FFFFFF; --signal:#E8B93A;
   --head:"Bricolage Grotesque",system-ui,sans-serif;
   --body:"Newsreader",Georgia,serif;
+  --gutter:1.25rem;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 1.125rem/1.6 var(--body)}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+.wrap{max-width:68rem;margin:0 auto;padding-inline:var(--gutter)}
 header{padding:1.25rem 0}
-header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+header .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem 1.25rem}
 .logo{font:700 1.125rem var(--head);text-decoration:none;letter-spacing:-.01em}
 .logo span{display:inline-block;width:.6rem;height:.6rem;background:var(--signal);margin-right:.5rem;border-radius:50%}
-nav a{font:500 .95rem var(--head);margin-left:1.25rem;text-decoration:none;color:var(--muted)}
+nav{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem}
+nav a{font:500 .95rem var(--head);text-decoration:none;color:var(--muted)}
 nav a:hover{color:var(--ink)}
-.hero{padding:clamp(3rem,10vw,8rem) 0 clamp(3rem,8vw,6rem)}
-h1{font:700 clamp(2.25rem,7vw,5rem)/1.04 var(--head);letter-spacing:-.03em;margin:0 0 1.5rem;max-width:18ch}
-.intro{font-size:1.25rem;max-width:36rem;color:var(--muted);margin:0 0 2rem}
+.hero{padding-top:3.5rem;padding-bottom:4rem}
+h1{font:700 clamp(2.25rem,7vw,5rem)/1.1 var(--head);letter-spacing:-.03em;margin:0 0 1.5rem;max-width:18ch}
+.intro{font-size:1.25rem;line-height:1.6;max-width:36rem;color:var(--muted);margin:0 0 2rem}
 .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font:500 1rem var(--head);padding:.85rem 1.4rem;border-radius:.25rem;text-decoration:none;border:0;cursor:pointer}
 .btn:hover{background:#0A555C}
+.hero .btn{padding:1rem 1.75rem}
 section{padding:clamp(2.5rem,6vw,4.5rem) 0;border-top:1px solid var(--rule)}
 h2{font:700 1.5rem var(--head);letter-spacing:-.01em;margin:0 0 1.5rem}
 .row{display:grid;grid-template-columns:1fr;gap:.25rem 3rem;padding:1.25rem 0;border-top:1px solid var(--rule)}
@@ -48,6 +51,8 @@ textarea{min-height:9rem;resize:vertical}
 footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.95rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem}
 @media(min-width:48rem){
+  :root{--gutter:2.5rem}
+  .hero{padding-top:6rem;padding-bottom:6.5rem}
   .row{grid-template-columns:16rem 1fr}
   .two{grid-template-columns:16rem 1fr;gap:3rem}
   .two h2{margin:0}

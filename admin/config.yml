@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: joe-sdc/sdcagency
+  branch: main
+  base_url: https://api.netlify.com            # lets Netlify handle GitHub login
+  auth_endpoint: auth
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: pages
+    label: Site content
+    files:
+      - name: site
+        label: Home page
+        file: content/site.json
+        fields:
+          - { name: headline, label: Headline, widget: string }
+          - { name: intro, label: Intro paragraph, widget: text }
+          - name: services
+            label: Services
+            widget: list
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: description, label: Description, widget: text }
+          - { name: about_title, label: About heading, widget: string }
+          - { name: about_body, label: About text, widget: text }
+          - { name: email, label: Contact email, widget: string }
+          - { name: linkedin, label: LinkedIn URL, widget: string }

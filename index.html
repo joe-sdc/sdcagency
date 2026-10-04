@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SDC Agency | Content strategy and digital marketing consulting, Barcelona</title>
+<meta name="description" content="Independent consulting in digital marketing, content strategy, communications and business development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F5F4; --ink:#10242B; --muted:#4F626A; --rule:#C9D3D6;
+  --accent:#0E6B73; --accent-ink:#FFFFFF; --signal:#E8B93A;
+  --head:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Newsreader",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.125rem/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+header{padding:1.25rem 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.logo{font:700 1.125rem var(--head);text-decoration:none;letter-spacing:-.01em}
+.logo span{display:inline-block;width:.6rem;height:.6rem;background:var(--signal);margin-right:.5rem;border-radius:50%}
+nav a{font:500 .95rem var(--head);margin-left:1.25rem;text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.hero{padding:clamp(3rem,10vw,8rem) 0 clamp(3rem,8vw,6rem)}
+h1{font:700 clamp(2.25rem,7vw,5rem)/1.04 var(--head);letter-spacing:-.03em;margin:0 0 1.5rem;max-width:18ch}
+.intro{font-size:1.25rem;max-width:36rem;color:var(--muted);margin:0 0 2rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font:500 1rem var(--head);padding:.85rem 1.4rem;border-radius:.25rem;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:#0A555C}
+section{padding:clamp(2.5rem,6vw,4.5rem) 0;border-top:1px solid var(--rule)}
+h2{font:700 1.5rem var(--head);letter-spacing:-.01em;margin:0 0 1.5rem}
+.row{display:grid;grid-template-columns:1fr;gap:.25rem 3rem;padding:1.25rem 0;border-top:1px solid var(--rule)}
+.row:first-of-type{border-top:0;padding-top:0}
+.row h3{font:500 1.25rem var(--head);margin:0}
+.row p{margin:0;color:var(--muted)}
+.two{display:grid;gap:2rem;grid-template-columns:1fr}
+.about p{max-width:40rem;margin:0;white-space:pre-line}
+form{display:grid;gap:1rem;max-width:34rem}
+label{font:500 .95rem var(--head);display:grid;gap:.35rem}
+input,textarea{font:inherit;padding:.7rem .8rem;border:1px solid #9FB0B5;border-radius:.25rem;background:#fff;color:var(--ink)}
+textarea{min-height:9rem;resize:vertical}
+.hp{position:absolute;left:-9999px}
+footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem}
+@media(min-width:48rem){
+  .row{grid-template-columns:16rem 1fr}
+  .two{grid-template-columns:16rem 1fr;gap:3rem}
+  .two h2{margin:0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top"><span></span>SDC Agency</a>
+  <nav aria-label="Main"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1 id="headline">Clear marketing and communications for businesses that are ready to grow.</h1>
+    <p class="intro" id="intro"></p>
+    <a class="btn" href="#contact">Get in touch</a>
+  </div>
+
+  <section id="services"><div class="wrap two">
+    <h2>Services</h2>
+    <div id="service-list"></div>
+  </div></section>
+
+  <section id="about"><div class="wrap two about">
+    <h2 id="about-title">About</h2>
+    <p id="about-body"></p>
+  </div></section>
+
+  <section id="contact"><div class="wrap two">
+    <h2>Contact</h2>
+    <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <label>Name <input name="name" type="text" required autocomplete="name"></label>
+      <label>Email <input name="email" type="email" required autocomplete="email"></label>
+      <label>How can I help? <textarea name="message" required></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+    </form>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© <span id="year"></span> SDC Agency</span>
+  <span><a id="email-link" href="#">Email</a> · <a id="linkedin-link" href="#" rel="noopener">LinkedIn</a></span>
+</div></footer>
+
+<script>
+const fallback = {"headline":"Clear marketing and communications for businesses that are ready to grow.","intro":"","services":[],"about_title":"About","about_body":"","email":"hello@sdcagency.com","linkedin":"https://www.linkedin.com/in/joespeck"};
+function render(d){
+  const $=id=>document.getElementById(id);
+  $('headline').textContent=d.headline||'';
+  $('intro').textContent=d.intro||'';
+  $('about-title').textContent=d.about_title||'About';
+  $('about-body').textContent=d.about_body||'';
+  const list=$('service-list'); list.innerHTML='';
+  (d.services||[]).forEach(s=>{
+    const row=document.createElement('div'); row.className='row';
+    const h=document.createElement('h3'); h.textContent=s.title;
+    const p=document.createElement('p'); p.textContent=s.description;
+    row.append(h,p); list.append(row);
+  });
+  $('email-link').href='mailto:'+d.email; 
+  $('linkedin-link').href=d.linkedin;
+  $('year').textContent=new Date().getFullYear();
+}
+fetch('/content/site.json').then(r=>r.json()).then(render).catch(()=>render(fallback));
+</script>
+</body>
+</html>
